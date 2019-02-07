@@ -5,6 +5,9 @@ apply plugin: 'com.jfrog.bintray'
 dependencies {
 }
 
+// NOTICE: Modified by @richardleggett to create a version for JitPack that includes
+// commits since the last stale release 1.2.1. This means Bintray values are redundant.
+
 Properties properties = new Properties()
 final def bintrayPropertiesFile = project.rootProject.file('bintray.properties')
 if (bintrayPropertiesFile.exists()) properties.load(bintrayPropertiesFile.newDataInputStream())
@@ -13,7 +16,7 @@ android {
     compileSdkVersion 28
     buildToolsVersion '28.0.3'
     defaultConfig {
-        minSdkVersion 9
+        minSdkVersion 14
         targetSdkVersion 28
     }
     dataBinding {
